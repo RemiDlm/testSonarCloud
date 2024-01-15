@@ -34,7 +34,7 @@ let Clients = [
 
 // Function to add a new user
 function addUser(newUsername, newPassword, newRole) {
-    var newUser = { username: newUsername, password: newPassword, role: newRole };
+    const newUser = { username: newUsername, password: newPassword, role: newRole };
     Users.push(newUser);
 
     // Update local storage after adding a user
@@ -43,7 +43,7 @@ function addUser(newUsername, newPassword, newRole) {
 
 // Function to add a new product
 function addProduct(productName, price) {
-    var newProduct = { name: productName, price: price, active: true };
+    const newProduct = { name: productName, price: price, active: true };
     Products.push(newProduct);
 
     // Update local storage after adding a product
@@ -52,7 +52,7 @@ function addProduct(productName, price) {
 
 // Function to disable a product
 function disableProduct(productName) {
-    var productIndex = Products.findIndex(product => product.name === productName);
+    const productIndex = Products.findIndex(product => product.name === productName);
     if (productIndex !== -1) {
         Products[productIndex].active = false;
 
@@ -63,7 +63,7 @@ function disableProduct(productName) {
 
 // Function to create a new sale
 function createSale(newProduct, newQuantity, newTotalAmount ) {
-    var saleDetails = {product: newProduct, quantity: newQuantity, totalAmount: newTotalAmount };
+    const saleDetails = {product: newProduct, quantity: newQuantity, totalAmount: newTotalAmount };
     Sales.push(saleDetails);
 
     // Update local storage after creating a sale
@@ -72,7 +72,7 @@ function createSale(newProduct, newQuantity, newTotalAmount ) {
 
 // Function to modify a sale
 function modifySale(productName, modifiedSaleDetails) {
-    var saleIndex = Sales.findIndex(sale => sale.product === productName);
+    const saleIndex = Sales.findIndex(sale => sale.product === productName);
     if (saleIndex !== -1) {
         Sales[saleIndex] = modifiedSaleDetails;
 
@@ -88,7 +88,7 @@ function modifySale(productName, modifiedSaleDetails) {
 
 // Function to delete a sale
 function deleteSale(productName) {
-    var saleIndex = Sales.findIndex(sale => sale.product === productName);
+    const saleIndex = Sales.findIndex(sale => sale.product === productName);
     if (saleIndex !== -1) {
         Sales.splice(saleIndex, 1);
 
@@ -102,7 +102,7 @@ function deleteSale(productName) {
 }
 
 function createClient(newName, newAddress, newPhoneNumber) {
-    var clientDetails = { name: newName, address: newAddress, phoneNumber: newPhoneNumber };
+    const clientDetails = { name: newName, address: newAddress, phoneNumber: newPhoneNumber };
     Clients.push(clientDetails);
 
     // Update local storage after creating a client
@@ -111,7 +111,7 @@ function createClient(newName, newAddress, newPhoneNumber) {
 
 // Function to modify a client
 function modifyClient(clientName, modifiedClientDetails) {
-    var clientIndex = Clients.findIndex(client => client.name === clientName);
+    const clientIndex = Clients.findIndex(client => client.name === clientName);
     if (clientIndex !== -1) {
         Clients[clientIndex] = modifiedClientDetails;
 
@@ -126,7 +126,7 @@ function modifyClient(clientName, modifiedClientDetails) {
 
 // Function to delete a client
 function deleteClient(clientName) {
-    var clientIndex = Clients.findIndex(client => client.name === clientName);
+    const clientIndex = Clients.findIndex(client => client.name === clientName);
     if (clientIndex !== -1) {
         Clients.splice(clientIndex, 1);
 
